@@ -177,9 +177,9 @@
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(225, 273);
+            this.button1.Location = new System.Drawing.Point(225, 266);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 30);
+            this.button1.Size = new System.Drawing.Size(51, 40);
             this.button1.TabIndex = 14;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -190,9 +190,9 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(291, 273);
+            this.button2.Location = new System.Drawing.Point(291, 266);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 30);
+            this.button2.Size = new System.Drawing.Size(84, 40);
             this.button2.TabIndex = 15;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;

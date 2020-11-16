@@ -87,7 +87,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(0, 62);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(930, 549);
+            this.listView1.Size = new System.Drawing.Size(805, 483);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -167,7 +167,7 @@
             this.инструментыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(930, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(805, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -341,7 +341,7 @@
             this.toolStripButton4});
             this.toolStrip2.Location = new System.Drawing.Point(727, 29);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(42, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(81, 27);
             this.toolStrip2.TabIndex = 8;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -353,6 +353,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton4.Text = "Search";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // label4
             // 
@@ -372,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 611);
+            this.ClientSize = new System.Drawing.Size(805, 545);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);

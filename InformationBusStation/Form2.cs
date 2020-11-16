@@ -25,6 +25,9 @@ namespace InformationBusStation
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            list.nomer = "000";
+            list.timeOtpr = "00:00";
+            list.timePrib = "00:00";
             textBox1.Text = list.nomer;
             textBox2.Text = list.type;
             textBox3.Text = list.punktNaz;

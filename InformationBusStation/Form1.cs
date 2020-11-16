@@ -124,17 +124,21 @@ namespace InformationBusStation
                     }
                 }
                 InfoAddList();
+                comboBox1.Items.Add("");
                 foreach (var item in info)
                 {
                     if (!comboBox1.Items.Contains(item.punktNaz))
                         comboBox1.Items.Add(item.punktNaz);
                 }
                 addComboBox2();
+                comboBox1.SelectionStart = 0;
+                comboBox2.SelectionStart = 0;
             }
         }
 
         public void addComboBox2()
         {
+            comboBox2.Items.Add("");
             int i = 0;
             string time = "";
             bool p = true;
@@ -142,36 +146,36 @@ namespace InformationBusStation
             {
                 if (i == 0)
                 {
-                    time = "0" + $"{i}.00";
+                    time = "0" + $"{i}:00";
                     comboBox2.Items.Add(time);
                 }
                 if (i < 10 && p == true)
                 {
-                    time = "0" + $"{i}.30";
+                    time = "0" + $"{i}:30";
                     comboBox2.Items.Add(time);
                     p = false;
                 }
                 if (i < 10 && p == false)
                 {
-                    time = "0" + $"{i + 1}.00";
+                    time = i == 9 ? $"{i + 1}:00" : "0" + $"{i + 1}:00";
                     comboBox2.Items.Add(time);
                     p = true;
                 }
-                if (i > 10 && p == true)
+                if (i >= 10 && p == true)
                 {
-                    time = $"{i}.30";
+                    time = $"{i}:30";
                     comboBox2.Items.Add(time);
                     p = false;
                 }
-                if (i > 10 && p == false)
+                if (i >= 10 && p == false)
                 {
-                    time = $"{i + 1}.00";
+                    time = $"{i + 1}:00";
                     comboBox2.Items.Add(time);
                     p = true;
                 }
                 i++;
             }
-            comboBox2.Items.RemoveAt(4);
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -186,9 +190,9 @@ namespace InformationBusStation
                         sw.WriteLine(item.nomer);
                         sw.WriteLine(item.type);
                         sw.WriteLine(item.punktNaz);
-                        sw.WriteLine(item.dataOtpr.ToString());
+                        sw.WriteLine(item.dataOtpr.ToShortDateString());
                         sw.WriteLine(item.timeOtpr);
-                        sw.WriteLine(item.dataPrib.ToString());
+                        sw.WriteLine(item.dataPrib.ToShortDateString());
                         sw.WriteLine(item.timePrib);
                     }
                 }
@@ -281,6 +285,31 @@ namespace InformationBusStation
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            bool search = true;
+            List<InfoList> list = new List<InfoList>();
+            foreach (var item in info)
+            {
+                if (item.punktNaz == comboBox1.SelectedItem.ToString()
+                    && Convert.ToDouble(item.timePrib.Replace(':', ',')) < Convert.ToDouble(comboBox2.SelectedItem.ToString().Replace(':', ',')))
+                {
+                    list.Add(item);
+                    search = true;
+                }
+                else
+                    search = false;
+
+            }
+            if (list.Count == 0)
+                MessageBox.Show("ПОДХОДЯЩИХ РЕЙСОВ НЕ НАЙДЕНО!!!\n\n" +
+                                        "Попробуйте изменить условия поиска!!!");
+            Form3 f3 = new Form3();
+            f3.Text = "СПИСОК ОТСОРТИРОВАННЫХ РЕЙСОВ";
+            f3.info = list;
+            f3.ShowDialog();
         }
     }
 
